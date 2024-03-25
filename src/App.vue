@@ -27,8 +27,11 @@ import { store } from './data/store'
 </script>
 
 <template>
-  <Header/>
-  <Main/>
+  <body>
+    <Header/>
+    <Main/>
+    
+  </body>
 </template>
 
 
