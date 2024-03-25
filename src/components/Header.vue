@@ -13,6 +13,7 @@ import {store} from '../data/store'
 
 <template>
  
+<div>header</div>
 </template>
 
 
