@@ -18,7 +18,6 @@ import { store } from './data/store'
       getApi(){
         axios.get(this.store.apiUrl).then(result => {
         this.store.cardList = result.data.results})
-        console.log(this.store.cardList);
       }
     },
     mounted(){
@@ -28,8 +27,6 @@ import { store } from './data/store'
 </script>
 
 <template>
-        <p>{{ store.cardList }}</p>
-
   <Header/>
   <Main/>
 </template>
