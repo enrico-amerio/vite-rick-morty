@@ -23,9 +23,8 @@ import {store} from '../data/store'
     <div class="container text-center ">
       <h1>Rick&Morty</h1>
         <div class="d-flex"> 
-          <input class="form-control me-2"  placeholder="Search by name" v-model.trim="nameToSearch" @keyup.enter="search" >
-          <button class="btn btn-primary me-2" @click="search">Search</button>
-          <button class="btn btn-outline-primary">Reset</button>
+          <input class="form-control me-2"  placeholder="Search by name" v-model.trim="nameToSearch" @input="search">
+          
         </div>
     </div>
   </header>
