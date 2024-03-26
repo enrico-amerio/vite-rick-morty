@@ -5,6 +5,14 @@ import {store} from '../data/store'
       return{
         store
       }
+    },
+    methods:{
+      search(){
+        this.store.searchParams.name = this.nameToSearch
+        console.log(this.store.searchParams.name );
+        this.$emit('search');
+        
+      }
     }
     
   }
@@ -15,12 +23,11 @@ import {store} from '../data/store'
   <header>
     <div class="container text-center ">
       <h1>Rick&Morty</h1>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        
-        <button class="btn btn-primary me-2" type="submit">Search</button>
-        <button class="btn btn-outline-primary" type="submit">Reset</button>
-      </form>
+        <div class="d-flex"> 
+          <input class="form-control me-2"  placeholder="Search by name" aria-label="Search" v-model.trim="nameToSearch" @keyup.enter="search" >
+          <button class="btn btn-primary me-2" type="submit" @click="search">Search</button>
+          <button class="btn btn-outline-primary" type="submit">Reset</button>
+        </div>
     </div>
   </header>
 </template>
@@ -28,7 +35,5 @@ import {store} from '../data/store'
 
 
 <style lang="scss" scoped>
-h1{
- 
-}
+
 </style>

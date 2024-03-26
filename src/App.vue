@@ -16,9 +16,15 @@ import { store } from './data/store'
     },
     methods:{
       getApi(){
-        axios.get(this.store.apiUrl).then(result => {
+        axios.get(this.store.apiUrl,{
+          params: store.searchParams
+        }).then(result => {
         this.store.cardList = result.data.results})
-      }
+        .catch(error => {
+          console.log('error')
+        })
+      },
+      
     },
     mounted(){
       this.getApi();
@@ -27,15 +33,12 @@ import { store } from './data/store'
 </script>
 
 <template>
-  <body>
-    <Header/>
+    <Header @search="getApi"/>
     <Main/>
-    
-  </body>
 </template>
 
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use './assets/scss/main.scss';
 </style>

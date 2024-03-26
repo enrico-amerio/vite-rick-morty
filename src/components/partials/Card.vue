@@ -28,7 +28,6 @@ import {store} from '../../data/store'
 
 <style lang="scss" scoped>
 .card{
-  // background-color:transparent;
   border: 0px;
   background-color: rgba(0,124,185, .05);
   padding: 30px;
