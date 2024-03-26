@@ -16,13 +16,16 @@ export default {
 
 <template>
   <main>
-    <div class="container d-flex flex-wrap justify-content-center ">
+    <div v-if="this.store.cardList.length > 0" class="container d-flex flex-wrap justify-content-center ">
       <Card v-for="card in this.store.cardList" :key="card.id"
         :img="card.image"
         :name="card.name"
         :status="card.status"
         :species="card.species"
       />
+    </div>
+    <div v-else class="text-center mt-4 ">
+      <h1>{{ this.store.searchParams.error }}</h1>
     </div>
   </main>
 </template>

@@ -8,6 +8,6 @@ export const store = reactive({
   searchParams: {
     name: "",
     status:"",
-    error: "Nessun risultato"
+    error: ""
   }
 })

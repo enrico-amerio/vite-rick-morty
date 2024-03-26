@@ -21,7 +21,8 @@ import { store } from './data/store'
         }).then(result => {
         this.store.cardList = result.data.results})
         .catch(error => {
-          console.log('error')
+          store.cardList = []
+          store.searchParams.error = "Nessun risultato"
         })
       },
       
