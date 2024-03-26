@@ -9,6 +9,9 @@ import {store} from '../data/store'
     },
     methods:{
       search(){
+        this.store.searchParams.totPages = 0
+        this.store.searchParams.page = 1
+        this.store.counter = 1
         this.store.searchParams.name = this.nameToSearch
         this.store.searchParams.status = this.statusToSearch
         this.$emit('search');
