@@ -7,6 +7,7 @@ export const store = reactive({
   cardList: [],
   searchParams: {
     name: "",
+    status:"",
     error: "Nessun risultato"
   }
 })
